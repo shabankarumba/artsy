@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+  <head>
+  </head>
+  <body>
+    <div>
+      <ul>
+        <% @exhibitions.each do |exhibition| %>
+          <li><a href=<%= exhibition["url"] %>> <%= exhibition["name"] %></a></li>
+          <li><a href=<%= exhibition["gallery_url"] %>> <%= exhibition["gallery_name"] %></a></li>
+        <% end %>
+      </ul>
+    </div>
+  </body>
+</html>

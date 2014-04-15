@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+  </head>
+  <body>
+    <div>
+      <% @galleries["galleries"].each do |gallery| %>
+        <ul>
+          <li><%= gallery["id"] %></li>
+          <li><%= gallery["name"] %></li>
+          <li><a href=<%= gallery["exhibitions"]%>>Exhibition</a></li>
+          <li><a href=<%= gallery["url"] %> >Gallery<a/></li>
+        </ul>
+      <% end %>
+    </div>
+  </body>
+</html>
