@@ -1,17 +1,18 @@
-<!doctype html>
-<html>
-  <head>
-  </head>
-  <body>
-    <div>
-      <% @galleries["galleries"].each do |gallery| %>
-        <ul>
-          <li><%= gallery["id"] %></li>
-          <li><%= gallery["name"] %></li>
-          <li><a href=<%= gallery["exhibitions"]%>>Exhibition</a></li>
-          <li><a href=<%= gallery["url"] %> >Gallery<a/></li>
-        </ul>
-      <% end %>
-    </div>
-  </body>
-</html>
+<div class="galleries">
+  <table class="table table-striped">
+    <tr>
+      <th><p>Id</p></th>
+      <th><p>Gallery Name</p></th>
+      <th><p>Exhibitions</p></th>
+      <th><p>Gallery URL</p></th>
+    <tr/>
+    <% @galleries["galleries"].each do |gallery| %>
+    <tr>
+      <td><%= gallery["id"] %></td>
+      <td><%= gallery["name"] %></td>
+      <td><a href=<%= gallery["exhibitions"]%>>Exhibition</a></td>
+      <td><a href=<%= gallery["url"] %> >Gallery<a/></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
