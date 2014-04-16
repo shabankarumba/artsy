@@ -16,7 +16,7 @@ class Artsy < Sinatra::Base
 
   get "/galleries/:id/exhibitions", layout: "layout.erb" do
     @exhibition = PickledShark::Exhibition.get_exhibitions_for_gallery(params[:id])
-    erb :gallery_exhibition
+    erb :exhibition
   end
 
   get "/exhibitions", layout: "layout.erb" do
@@ -29,8 +29,18 @@ class Artsy < Sinatra::Base
     erb :exhibition
   end
 
-  post "/tickets/",layout: "layout.erb" do
+  get "/tickets" do
+    erb :ticket_create
+  end
 
+  post "/tickets/new",layout: "layout.erb" do
+    ticket =  { name: params["name"], exhibition_id: params["id"], entry_at: params["entry_at"] }
+    @response = PickledShark::Ticket.create(ticket)
+    if @response.nil?
+      redirect 'ticket_success'
+    else
+      redirect "/tickets"
+    end
   end
 
   delete "/tickets/:id", layout: "layout.erb" do
