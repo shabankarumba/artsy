@@ -1,15 +1,13 @@
-<!doctype html>
-<html>
-  <head>
-  </head>
-  <body>
-    <div>
-      <ul>
-        <% @exhibitions.each do |exhibition| %>
-          <li><a href=<%= exhibition["url"] %>> <%= exhibition["name"] %></a></li>
-          <li><a href=<%= exhibition["gallery_url"] %>> <%= exhibition["gallery_name"] %></a></li>
-        <% end %>
-      </ul>
-    </div>
-  </body>
-</html>
+<div class="exhibitions">
+  <ul class="list-group">
+    <% @exhibitions.each do |exhibition| %>
+      <div class="exhibtion-list">
+        <h4>Exhibition</h4>
+        <a href=<%= exhibition["url"] %>><p class="bg-info"><%= exhibition["name"] %></p></a>
+        <h4>Gallery</h4>
+        <a href=<%= exhibition["gallery_url"] %>><p class="bg-info"><%= exhibition["gallery_name"] %></p></a>
+      </div>
+    <% end %>
+  </ul>
+</div>
+  
