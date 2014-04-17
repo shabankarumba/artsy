@@ -1,12 +1,20 @@
-<form action="/tickets/new" method="post">
-  <label>Name</label>
-  <input type="text" name="name"/>
+<div class="ticket-form">
+  <form role="form" action="/tickets/new" method="post">
+    <div class="form-group">
+      <label for="Name">Name</label>
+      <input type="text" name="name"/>
+    </div>
 
-  <label>Entry at</label>
-  <input type="text" name="entry_at">
+    <div class="form-group">
+      <label>Entry at</label>
+      <input type="text" name="entry_at">
+    </div>
 
-  <label>Exhibiton id</label>
-  <input type="text" name="id" >
+    <div class="form-group">
+      <label>Exhibiton id</label>
+      <input type="text" name="id">
+    </div>
 
-  <input type="submit" value="Create Ticket">
-</form>
+    <input type="submit" class="btn btn-default" value="Create Ticket">
+  </form>
+</div>
